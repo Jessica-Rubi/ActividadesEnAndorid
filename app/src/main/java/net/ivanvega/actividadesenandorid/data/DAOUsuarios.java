@@ -30,7 +30,6 @@ public class DAOUsuarios {
                 new String[]{ "\\%"+ nombre+ "\\%"}
 
         );
-
     }
 
     public boolean delete (long id){
@@ -38,7 +37,6 @@ public class DAOUsuarios {
         return ad.delete(DB.TABLE_USUARIOS_NAME,
                 "_id=? and status=?",
                 new String[]{String.valueOf(id), "VI"}) >  0;
-
     }
 
     public boolean update(Usuario usuario){

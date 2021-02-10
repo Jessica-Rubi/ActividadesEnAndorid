@@ -52,11 +52,9 @@ public class MiProveedorContenido extends ContentProvider {
     }
 
     DAOUsuarios daoUsuarios;
-
     @Override
     public boolean onCreate() {
         daoUsuarios = new DAOUsuarios(getContext());
-
         return false;
     }
 
@@ -75,6 +73,12 @@ public class MiProveedorContenido extends ContentProvider {
                 //base de datos
                 String id = uri.getLastPathSegment();
                 result = daoUsuarios.getOneByIDCursor(Long.parseLong(id));
+                break;
+
+            case 3:
+                String id1 = uri.getLastPathSegment();
+                result = daoUsuarios.getOneByIDCursor(Long.parseLong(id1));
+                break;
         }
 
         return result;
